@@ -1,0 +1,74 @@
+.story{
+    width: 75%;
+    height: 27rem;
+    background-color: transparent;
+    border-radius: 3px;
+    margin: 0 auto;
+    box-shadow: 0 2rem 3rem rgba(black,0.4);
+    padding: 6rem;
+    
+    font-size: 1.6rem;
+
+    transform: skewX(-12deg);
+
+    // we can't apply two times transform to a single element
+
+    &__shape{
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        
+
+        // tonapply shape-outside element should be float and its height and width shoul be defined
+        // this will help in to make text round
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+
+        -webkit-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+
+        transform: translateX(-3rem) skewX(12deg);
+
+        position: relative;
+    }
+
+    &__img{
+       height: 100%;
+       transform: translateX(-4rem) scale(1.4);
+       transition: all 0.5s;
+      
+    }
+    &__text{
+        transform: skewX(12deg);
+    }
+    &__caption{
+        color: white;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,20%);
+        opacity: 0;
+        transition: all 0.5s;
+        
+        // to remove glitch
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%,-60%);
+        .story__img{
+            opacity: .4;
+        }
+    }
+    &:hover &__img{
+        transform: translateX(-4rem) scale(1);
+
+        filter: blur(3px) brightness(80%);
+    }
+        margin-bottom: 4rem;
+    
+}

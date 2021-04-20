@@ -1,0 +1,99 @@
+// btn:link and btn:visited only appicable for <a> not for <button>
+.btn,.btn:link,
+.btn:visited{
+ 
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  /* a is a inline element so it will take some area of upper element */
+  display: inline-block;
+  
+  /* this button is just a text
+  so we will write texralign center for box */
+
+  border-radius: 20rem;
+
+  /*  all animation gets 0.2second*/
+  transition: all 0.2s;
+
+  position: relative;
+
+  animation: moveinbottom 0.4s ease-out 0.75s;
+  /* animation-name , animation-duration animation-acceleration animationdelay */
+
+  /* but button is visible before animation starts */
+  /* it apply 0% animation initially */
+  animation-fill-mode: backwards;
+}
+.btn:hover{
+  /* -3px means on the top side */
+  transform: translateY(-.3rem);
+
+  /*x=0 , y=10px , blur=20px*/
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+
+}
+.btn:active,.btn:focus{
+  outline: none;
+  border: none;
+  transform: translateY(-1px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+}
+.btn-white{
+
+  background-color: $white-color;
+  color: grey;
+}
+.btn-green{
+
+  background-color: $light-color;
+  color:white;
+}
+/* psudo element */
+.btn::after{
+    /* content should be given otherwise it is not visible */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;  
+    border-radius: 20rem;
+    /* it will adjust itself reference to its parent whose position is relative */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $white-color;
+    /* so that it is under button */
+    z-index: -1;
+    transition: all 0.4s;
+    
+}
+.btn:hover::after{
+  /* height become 1.5 times and width become 1.3 times */
+  transform: scaleX(1.3) scaleY(1.5);
+  opacity: 0;
+
+}
+
+.btn-text{
+  &:link,
+  &:visited{
+      font-size: 1.6rem;
+      text-decoration: none;
+      border-bottom: 1px solid $light-color;
+      display: inline-block;
+      padding: 1rem;
+      color: $light-color;
+  }
+  &:hover{
+    color: white;
+    background-color: $light-color;
+    text-decoration: none;
+    transform: translateY(2px);
+    box-shadow: 0 1rem 2rem rgba( #000000, 0.2);
+  }
+  &:active{
+    transform: translateY(0);
+    box-shadow: 0 0.5rem 1rem rgba( #000000, 0.2);
+  }
+}

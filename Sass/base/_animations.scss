@@ -1,0 +1,48 @@
+/*animation (name it according to us)*/
+@keyframes moveinleft{
+
+    /* percentage tell us how much process has completed */
+    0%{
+       opacity: 0;
+       transform: translateX(-8rem);
+    }
+    /* 60%{
+      transform: rotate(180deg);
+    } */
+    80%{
+      transform: translateX(1rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+@keyframes moveinright{
+
+  /* percentage tell us how much process has completed */
+  0%{
+     opacity: 0;
+     transform: translateX(8rem);
+  }
+  80%{
+    transform: translateX(-1rem);
+  }
+  100%{
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveinbottom{
+
+    /* percentage tell us how much process has completed */
+    0%{
+       opacity: 0;
+       transform: translateY(4rem);
+    }
+  
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}

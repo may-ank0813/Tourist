@@ -1,0 +1,37 @@
+.header{
+
+    color: $white-color;
+    
+    /* to use linear gradient background-image: should be available; */
+    background-image: linear-gradient(to right bottom,rgba($light-color,0.8),rgba($dark-color,0.8))
+                      ,url(hero.jpg);
+  
+    /* height of 95% of web page  */
+    height: 95vh;
+    
+    /* image cover all width of background */
+    background-size: cover;
+    
+    /* whatever the dimension of background it will always remain attach with top   */
+    background-position: top;
+  
+    /* cliping the background image  */
+    /* coordinates should be in clockwise manner  */
+    clip-path: polygon(0 0, 100% 0,100% 75vh,0 100%);
+  
+    position: relative;
+  
+    /* Easiest way to centre things is tranform,left,right properties */
+  
+    &__logobox{
+      position: absolute;
+    
+      /* these measurement starts from there whose position is relative */
+      top: 4rem;
+      left: 4rem;
+  
+      img{
+        height: 3.5rem;
+      }
+    }
+  }

@@ -1,0 +1,22 @@
+/* universal selector */
+*,
+*::after,
+*::before{
+  /* initially webpage has some padding and margin */
+  padding: 0;
+  margin: 0;
+  /* padding and width not included in boxdimension*/
+  /* box-sizing property doesn't show inheritance */
+  box-sizing: inherit;  
+}
+
+html{
+    /* by default it is 16px */
+    /* root font size */
+    font-size: 10px;
+}
+body{
+    
+    padding: 2rem;
+    box-sizing: border-box;
+  }

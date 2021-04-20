@@ -1,0 +1,168 @@
+.card{
+
+    // perspective should be present in parent element
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 50rem;
+
+    &__side{
+        
+        height: 50rem;
+        transition: all 1s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // by applying position absolute it will take only that width in which text is available  
+        width: 100%; 
+        backface-visibility: hidden; 
+
+        border-radius: 3px;
+
+        // if we apply background image then image edges doesnt overlap on border radius
+        overflow: hidden;
+        box-shadow: 0 2rem 4rem rgba(black,0.4);
+
+
+        &--front{
+            background-color: white; 
+        }
+
+        &--back{
+           color: white;
+           text-align: center;
+           transform: rotateY(180deg); 
+           &-1{
+              background-image: linear-gradient(to right bottom,$light-orange,$dark-orange);
+              &__heading{
+                  font-size: 1.6rem;
+                  margin-top: 13rem;
+              }
+              &__price{
+                font-size: 4rem;
+                margin-top: 1rem;
+              }
+              &__btn{
+                  margin-top: 3rem;
+              }
+           }
+           &-2{
+                background-image: linear-gradient(to right bottom,$light-color,$dark-color);
+                &__heading{
+                 font-size: 1.6rem;
+                 margin-top: 13rem;
+                }
+                &__price{
+                  font-size: 4rem;
+                  margin-top: 1rem;
+                 }
+                &__btn{
+                  margin-top: 3rem;
+                }
+            
+            } 
+           &-3{
+                 background-image: linear-gradient(to right bottom,$light-blue,$dark-blue);
+                 &__heading{
+                   font-size: 1.6rem;
+                    margin-top: 13rem;
+                }
+                &__price{
+                 font-size: 4rem;
+                 margin-top: 1rem;
+                }
+                &__btn{
+                   margin-top: 3rem;
+                }
+            }            
+        }
+    }   
+
+    &:hover &__side--front {
+        // rotate along y axis
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back {
+        // rotate along y axis
+        transform: rotateY(0);
+    }
+
+
+    // styling card
+    &__picture{
+        height: 23rem;
+        background-blend-mode: screen;
+        background-size: cover;
+        
+        -webkit-clip-path: polygon(0 0 ,100% 0,100% 80%,0 100%);
+        clip-path: polygon(0 0 ,100% 0,100% 80%,0 100%);
+
+        &-1{
+           background-image:linear-gradient(to right bottom,$light-orange,$dark-orange),
+           url("nat-5.jpg") ;
+        }
+        &-2{
+            background-image:linear-gradient(to right bottom,$light-color,$dark-color),
+            url("nat-6.jpg") ;
+        }
+        &-3{
+            background-image:linear-gradient(to right bottom,$light-blue,$dark-blue),
+            url("nat-7.jpg") ;
+        }
+    }
+
+    &__heading{
+        font-size: 2.4rem;
+        color: white;
+        text-align: right;
+        text-transform: uppercase;
+        
+        position: absolute;
+        top: 15rem;
+        right: 2rem;
+        // as heading is block element so we are giving it only 75% of width
+        width: 75%;
+    }
+
+    .heading__span{
+
+       
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 0rem 1rem;
+
+        &-1{
+           background-image: linear-gradient(to right bottom,
+           rgba($light-orange,0.8),
+           rgba($dark-orange,0.8));
+        }
+        &-2{
+            background-image: linear-gradient(to right bottom,
+            rgba($light-color,0.8),
+            rgba($dark-color,0.8));
+         }
+         &-3{
+            background-image: linear-gradient(to right bottom,
+            rgba($light-blue,0.8),
+            rgba($dark-blue,0.8));
+         }
+    }
+
+    &__details{
+        padding-top: 1.5rem;
+        ul{
+            list-style: none;
+            li{
+                width: 80%;
+                font-size: 1.4rem;
+                text-align: center;
+                margin: auto;
+                padding: 1.2rem;
+
+                &:not(:last-child){
+                   border-bottom: 2px solid lightgray;
+                }
+            }
+        }
+    }
+}
