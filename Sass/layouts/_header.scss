@@ -4,7 +4,7 @@
     
     /* to use linear gradient background-image: should be available; */
     background-image: linear-gradient(to right bottom,rgba($light-color,0.8),rgba($dark-color,0.8))
-                      ,url(hero.jpg);
+                      ,url(/images/hero.jpg);
   
     /* height of 95% of web page  */
     height: 95vh;

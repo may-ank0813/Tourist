@@ -8,7 +8,7 @@
 {   
     padding: 20rem 0;
     background-image: linear-gradient(to right bottom,rgba($light-color,0.8),rgba($dark-color,0.8))
-                      ,url(nat-4.jpg);
+                      ,url("images/nat-4.jpg");
     background-size: cover;
     transform: skewY(-7deg);
 
@@ -36,7 +36,7 @@
 }
 .book{
      background-image:linear-gradient(105deg ,rgba(white,0.8) 0%,
-                       rgba(white,0.8) 50%,transparent 50%) ,url("nat-10.jpg");
+                       rgba(white,0.8) 50%,transparent 50%) ,url("images/nat-10.jpg");
      height: 50rem;
      background-size: cover;
 
